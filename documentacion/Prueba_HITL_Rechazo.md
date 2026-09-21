@@ -34,6 +34,14 @@ La autora confirmó `WORKFLOW EXECUTED SUCCESSFULLY`. Posteriormente se verific�
 
 Resultado esperado en Airtable: Estado Rechazado, Aprobado desactivado y Notas del Revisor Rechazado por humano.
 
-La autora confirmó que guardó las dos capturas solicitadas. Está pendiente adjuntarlas y revisar visualmente la captura de Airtable para completar la evidencia del resultado persistido.
+Las dos capturas se incorporaron y revisaron visualmente. El workflow muestra la rama FALSE y Update record1 en verde. Airtable muestra el registro de prueba con Estado Rechazado y Aprobado desmarcado. La columna Notas del Revisor queda fuera del encuadre y no se considera acreditada por esta imagen.
+
+### Workflow
+
+![Recorrido de rechazo exitoso](../evidencias/hitl/01_Workflow_Rechazo.png)
+
+### Airtable
+
+![Estado de rechazo en Airtable](../evidencias/hitl/02_Airtable_Rechazo.png)
 
 Esta prueba valida el recorrido de rechazo. No acredita por sí sola la rama de aprobación ni el conjunto completo de pruebas del proyecto.

@@ -42,7 +42,7 @@ Este repositorio está en preparación. Los estados siguientes distinguen lo con
 
 La rama de rechazo del workflow `STH HITL Approval - FINAL` tiene una ejecución exitosa: **#11595, 21 de septiembre de 2026**, con recorrido por `FALSE → Update record1`.
 
-La autora guardó dos capturas: el workflow y el resultado en Airtable. Su carga en este repositorio está pendiente.
+Las dos capturas están disponibles en [evidencias/hitl](evidencias/hitl/): recorrido de rechazo en verde y estado final en Airtable.
 
 [Consultar la documentación de la prueba de rechazo](documentacion/Prueba_HITL_Rechazo.md).
 
@@ -52,7 +52,7 @@ La evidencia de aprobación (TRUE) sigue pendiente de verificación. Las pruebas
 
 - [ ] Incorporar el PDF de arquitectura y la documentación de datos, costos y seguridad.
 - [ ] Exportar y revisar los JSON actuales del agente, indexación y HITL.
-- [ ] Subir las dos capturas del rechazo HITL.
+- [x] Subir y revisar las dos capturas del rechazo HITL.
 - [ ] Incorporar evidencia verificable de aprobación TRUE.
 - [ ] Inventariar al menos cinco pruebas, incluido un camino de error.
 - [ ] Incorporar y comprobar los enlaces de lectura de Airtable y del dashboard.
