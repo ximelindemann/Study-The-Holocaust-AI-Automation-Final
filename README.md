@@ -3,6 +3,12 @@
 **Proyecto final de AI Automation · Coderhouse**  
 **Alumna:** Ximena Basualdo · **Fecha:** septiembre de 2026
 
+## Documento principal
+
+[Leer el PDF de arquitectura y documentación (10 páginas)](documentacion/Entrega_Final_STH_Revision.pdf).
+
+Versión de revisión del 21/09/2026: arquitectura de los tres workflows, datos, comparación de costos del agente, TP6 corregido, seguridad, evidencias y pendientes. No se considera lista para entrega hasta resolver las observaciones funcionales, pruebas y enlaces faltantes.
+
 ## Objetivo
 
 Asistente educativo de Study the Holocaust que combina generación de respuestas con recuperación de información (RAG), registro de consultas y revisión humana por correo. El ecosistema utiliza n8n, OpenAI, Supabase, Airtable y Gmail.
@@ -32,10 +38,10 @@ Este repositorio está en preparación. Los estados siguientes distinguen lo con
 
 | Criterio | Entregable | Estado en este repositorio |
 |---|---|---|
-| Arquitectura — 20% | PDF con triggers, decisiones, IA, APIs y destinos de datos | Pendiente de incorporar |
-| Estructuras de datos — 20% | Tablas, relaciones y esquemas JSON de transferencia | [Manual de datos disponible](documentacion/Manual_Datos.md); integración al PDF pendiente |
-| Costos — 20% | Matriz comparativa y justificación de modelos por tarea | [TP6 corregido disponible](documentacion/Costos_Eficiencia_TP6_Corregido.md); costos del agente actual e integración al PDF pendientes |
-| Seguridad y resiliencia — 20% | Minimización de datos, manejo de errores y HITL | Nota de prueba HITL disponible; documento completo pendiente |
+| Arquitectura — 20% | PDF con triggers, decisiones, IA, APIs y destinos de datos | PDF de revisión disponible, páginas 2 y 3 |
+| Estructuras de datos — 20% | Tablas, relaciones y esquemas JSON de transferencia | [Manual de datos disponible](documentacion/Manual_Datos.md); integrado al PDF, páginas 4 y 5 |
+| Costos — 20% | Matriz comparativa y justificación de modelos por tarea | [TP6 corregido disponible](documentacion/Costos_Eficiencia_TP6_Corregido.md); comparación del agente y TP6 en PDF, páginas 6 y 7; gasto real pendiente |
+| Seguridad y resiliencia — 20% | Minimización de datos, manejo de errores y HITL | Controles y límites documentados en PDF, página 8; correcciones funcionales pendientes |
 | Dashboard — 20% | Enlace de lectura con KPIs y tasa de errores | Pendiente de incorporar y verificar |
 
 ## Evidencias de pruebas
@@ -50,7 +56,8 @@ La revisión del [export HITL](documentacion/Revision_Export_HITL.md) identific�
 
 ## Pendientes de entrega
 
-- [ ] Incorporar el PDF de arquitectura y la documentación de datos, costos y seguridad.
+- [x] Incorporar PDF de revisión con arquitectura, datos, costos y seguridad.
+- [ ] Actualizar el PDF después de corregir y validar la versión final.
 - [x] Exportar e inspeccionar los JSON del agente, indexación y HITL.
 - [ ] Resolver las observaciones de los exports y verificar las versiones finales.
 - [x] Subir y revisar las dos capturas del rechazo HITL.
