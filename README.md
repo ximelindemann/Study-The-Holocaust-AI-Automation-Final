@@ -33,7 +33,7 @@ Este repositorio está en preparación. Los estados siguientes distinguen lo con
 | Criterio | Entregable | Estado en este repositorio |
 |---|---|---|
 | Arquitectura — 20% | PDF con triggers, decisiones, IA, APIs y destinos de datos | Pendiente de incorporar |
-| Estructuras de datos — 20% | Tablas, relaciones y esquemas JSON de transferencia | Pendiente de incorporar |
+| Estructuras de datos — 20% | Tablas, relaciones y esquemas JSON de transferencia | [Manual de datos disponible](documentacion/Manual_Datos.md); integración al PDF pendiente |
 | Costos — 20% | Matriz comparativa y justificación de modelos por tarea | Pendiente de incorporar |
 | Seguridad y resiliencia — 20% | Minimización de datos, manejo de errores y HITL | Nota de prueba HITL disponible; documento completo pendiente |
 | Dashboard — 20% | Enlace de lectura con KPIs y tasa de errores | Pendiente de incorporar y verificar |
