@@ -46,7 +46,7 @@ Las dos capturas están disponibles en [evidencias/hitl](evidencias/hitl/): reco
 
 [Consultar la documentación de la prueba de rechazo](documentacion/Prueba_HITL_Rechazo.md).
 
-La evidencia de aprobación (TRUE) sigue pendiente de verificación. Las pruebas del agente y su ruta de error, realizadas durante el desarrollo, deben incorporarse con sus evidencias. No se considera completo el conjunto de cinco pruebas hasta inventariarlas.
+La revisión del [export HITL](documentacion/Revision_Export_HITL.md) identificó correcciones pendientes en el IF y el tipo de Estado en TRUE. El rechazo probado no acredita por sí solo la decisión booleana de aprobación. Las pruebas del agente y su ruta de error, realizadas durante el desarrollo, deben incorporarse con sus evidencias. No se considera completo el conjunto de cinco pruebas hasta inventariarlas.
 
 ## Pendientes de entrega
 
@@ -58,6 +58,13 @@ La evidencia de aprobación (TRUE) sigue pendiente de verificación. Las pruebas
 - [ ] Incorporar y comprobar los enlaces de lectura de Airtable y del dashboard.
 - [ ] Incorporar el enlace del video de demostración.
 - [ ] Revisar archivos y capturas para excluir claves API, tokens y credenciales.
+
+## Workflows incorporados
+
+- [Agente: export anonimizado](workflows/Holocaust_Studies_Chat_Agent_Export_Anonimizado.json) · [Revisión](documentacion/Revision_Export_Agente.md).
+- [HITL: export anonimizado](workflows/STH_HITL_Export_Anonimizado.json) · [Revisión](documentacion/Revision_Export_HITL.md).
+
+Ambos conservan el estado inactivo y requieren reconectar credenciales al importar. Son copias del estado recibido con observaciones pendientes; la indexación todavía no se incorporó.
 
 ## Organización prevista
 
