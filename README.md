@@ -51,7 +51,8 @@ La revisión del [export HITL](documentacion/Revision_Export_HITL.md) identific�
 ## Pendientes de entrega
 
 - [ ] Incorporar el PDF de arquitectura y la documentación de datos, costos y seguridad.
-- [ ] Exportar y revisar los JSON actuales del agente, indexación y HITL.
+- [x] Exportar e inspeccionar los JSON del agente, indexación y HITL.
+- [ ] Resolver las observaciones de los exports y verificar las versiones finales.
 - [x] Subir y revisar las dos capturas del rechazo HITL.
 - [ ] Incorporar evidencia verificable de aprobación TRUE.
 - [ ] Inventariar al menos cinco pruebas, incluido un camino de error.
@@ -64,7 +65,9 @@ La revisión del [export HITL](documentacion/Revision_Export_HITL.md) identific�
 - [Agente: export anonimizado](workflows/Holocaust_Studies_Chat_Agent_Export_Anonimizado.json) · [Revisión](documentacion/Revision_Export_Agente.md).
 - [HITL: export anonimizado](workflows/STH_HITL_Export_Anonimizado.json) · [Revisión](documentacion/Revision_Export_HITL.md).
 
-Ambos conservan el estado inactivo y requieren reconectar credenciales al importar. Son copias del estado recibido con observaciones pendientes; la indexación todavía no se incorporó.
+- [Indexación: export anonimizado](workflows/Holocaust_Site_Index_Documents_Export_Anonimizado.json) · [Revisión](documentacion/Revision_Export_Indexacion.md).
+
+Los tres conservan el estado inactivo y requieren reconectar credenciales al importar. Son copias del estado recibido con observaciones pendientes; no equivalen a versiones corregidas y probadas.
 
 ## Organización prevista
 
