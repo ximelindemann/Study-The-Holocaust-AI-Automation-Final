@@ -44,6 +44,8 @@ Este repositorio está en preparación. Los estados siguientes distinguen lo con
 | Seguridad y resiliencia — 20% | Minimización de datos, manejo de errores y HITL | Controles y límites documentados en PDF, página 8; correcciones funcionales pendientes |
 | Dashboard — 20% | Enlace de lectura con KPIs y tasa de errores | Pendiente de incorporar y verificar |
 
+[Checklist viva de cierre](documentacion/Checklist_Entrega_Final.md): separa lo ya acreditado, lo pendiente y el orden recomendado para terminar.
+
 ## Evidencias de pruebas
 
 La rama de rechazo del workflow `STH HITL Approval - FINAL` tiene una ejecución exitosa: **#11595, 21 de septiembre de 2026**, con recorrido por `FALSE → Update record1`.
@@ -71,15 +73,17 @@ La revisión del [export HITL](documentacion/Revision_Export_HITL.md) identific�
 
 - [Agente: export anonimizado](workflows/Holocaust_Studies_Chat_Agent_Export_Anonimizado.json) · [Revisión](documentacion/Revision_Export_Agente.md).
 - [HITL: export anonimizado](workflows/STH_HITL_Export_Anonimizado.json) · [Revisión](documentacion/Revision_Export_HITL.md).
-
 - [Indexación: export anonimizado](workflows/Holocaust_Site_Index_Documents_Export_Anonimizado.json) · [Revisión](documentacion/Revision_Export_Indexacion.md).
 
 Los tres conservan el estado inactivo y requieren reconectar credenciales al importar. Son copias del estado recibido con observaciones pendientes; no equivalen a versiones corregidas y probadas.
 
+Las correcciones preparadas para revisión están documentadas en [Correcciones pendientes de workflows](documentacion/Correcciones_Pendientes_Workflows.md), [Parches de revisión](documentacion/Parches_Workflows_Revision.diff) y [workflows_corregidos](workflows_corregidos/README.md).
+
 ## Organización prevista
 
-- `documentacion/`: documentación técnica y PDF de entrega.
+- `documentacion/`: documentación técnica, checklist, parches y PDF de entrega.
 - `workflows/`: exportaciones JSON revisadas.
+- `workflows_corregidos/`: notas sobre las versiones corregidas de revisión.
 - `evidencias/`: capturas y registro de pruebas.
 
 ## Referencia del proyecto
