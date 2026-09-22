@@ -1,6 +1,6 @@
 # Checklist de entrega final - Study the Holocaust
 
-Estado al 21/09/2026. Este documento separa lo ya acreditado de lo pendiente para no presentar como terminado algo que todavia necesita prueba.
+Estado al 22/09/2026. Este documento separa lo ya acreditado de lo pendiente para no presentar como terminado algo que todavia necesita prueba.
 
 ## 1. Repositorio y archivos base
 
@@ -21,13 +21,14 @@ Estado al 21/09/2026. Este documento separa lo ya acreditado de lo pendiente par
 - [x] Modelo identificado en el export: `gpt-5-nano`.
 - [x] RAG identificado: Supabase vector store, tabla `documents`, `topK = 5`.
 - [x] Registro de exito y salida de error identificados en Airtable.
-- [ ] Corregir expresiones con doble igual `=={{ ... }}` en nodos de Airtable.
-- [ ] Reemplazar fechas fijas `2026-09-18T00:00:00` por fecha dinamica.
-- [ ] Probar pregunta educativa real.
-- [ ] Verificar respuesta en el chat.
-- [ ] Verificar registro creado en Airtable `Consultas Agente`.
-- [ ] Capturar evidencia de la prueba del agente.
-- [ ] Documentar el caso de prueba en GitHub.
+- [x] Corregir expresiones con doble igual `=={{ ... }}` en nodos de Airtable.
+- [x] Reemplazar fechas fijas `2026-09-18T00:00:00` por fecha dinamica.
+- [x] Quitar configuracion invalida `builtInTools` del nodo OpenAI.
+- [x] Probar pregunta educativa real. Ejecucion `11597`.
+- [x] Verificar respuesta generada internamente por el agente.
+- [x] Verificar registro creado en Airtable `Consultas Agente`.
+- [x] Documentar el caso de prueba en GitHub: `documentacion/Prueba_Agente_Kristallnacht.md`.
+- [ ] Capturar evidencia visual de la prueba del agente. Pendiente porque el chat visible mostro numeros aunque la ejecucion interna devolvio texto correcto.
 
 ## 3. HITL - rechazo
 
@@ -66,8 +67,8 @@ Estado al 21/09/2026. Este documento separa lo ya acreditado de lo pendiente par
 
 - [x] Prueba 1: HITL rechazo.
 - [ ] Prueba 2: HITL aprobacion.
-- [ ] Prueba 3: agente responde pregunta educativa.
-- [ ] Prueba 4: agente registra consulta en Airtable.
+- [x] Prueba 3: agente responde pregunta educativa.
+- [x] Prueba 4: agente registra consulta en Airtable.
 - [ ] Prueba 5: caso de seguridad/error documentado.
 - [ ] Prueba 6 opcional: indexacion o recuperacion RAG documentada.
 
@@ -83,7 +84,8 @@ Estado al 21/09/2026. Este documento separa lo ya acreditado de lo pendiente par
 - [x] Exports publicos sin credenciales.
 - [x] Workflow activo marcado como `false` en exports.
 - [x] Error path del agente identificado.
-- [ ] Corregir registro de errores del agente.
+- [x] Registro normal del agente corregido y probado.
+- [ ] Corregir/probar registro de errores del agente.
 - [ ] Documentar que no se publica automaticamente sin aprobacion humana.
 - [ ] Definir vista compartida sin datos sensibles.
 - [ ] Documentar riesgo de duplicados en HITL si el Schedule queda activo sin bloqueo de estado.
@@ -114,11 +116,10 @@ Estado al 21/09/2026. Este documento separa lo ya acreditado de lo pendiente par
 
 ## Orden recomendado de cierre
 
-1. Corregir agente de chat.
-2. Probar agente y registrar evidencia.
-3. Corregir HITL TRUE.
-4. Probar aprobacion y registrar evidencia.
-5. Completar dashboard o vista de lectura.
-6. Actualizar PDF final.
-7. Actualizar README y GitHub.
-8. Grabar video.
+1. Resolver la visualizacion del chat del agente o documentarla con captura.
+2. Corregir HITL TRUE.
+3. Probar aprobacion y registrar evidencia.
+4. Completar dashboard o vista de lectura.
+5. Actualizar PDF final.
+6. Actualizar README y GitHub.
+7. Grabar video.
