@@ -7,7 +7,7 @@
 
 [Leer el PDF de arquitectura y documentación (10 páginas)](documentacion/Entrega_Final_STH_Revision.pdf).
 
-Versión de revisión del 21/09/2026: arquitectura de los tres workflows, datos, comparación de costos del agente, TP6 corregido, seguridad, evidencias y pendientes. No se considera lista para entrega hasta resolver las observaciones funcionales, pruebas y enlaces faltantes.
+Versión de revisión del 21/09/2026. El PDF documenta arquitectura, estructuras de datos, costos, seguridad y evidencias iniciales. Debe actualizarse a versión final con las pruebas nuevas del 22/09/2026 antes de entregar.
 
 ## Objetivo
 
@@ -25,49 +25,36 @@ Asistente educativo de Study the Holocaust que combina generación de respuestas
 
 ## Flujos del proyecto
 
-- **Agente educativo:** recibe una consulta, utiliza las herramientas de conocimiento y registra la interacción en `Consultas Agente`.
+- **Agente educativo:** recibe una consulta, usa la base de conocimiento del sitio y registra la interacción en `Consultas Agente`.
 - **Indexación:** prepara contenido del sitio para su recuperación desde Supabase.
-- **Gestión de errores:** registra fallos del agente en Airtable.
-- **Revisión humana (HITL):** busca contenido en `Centro de Comando`, envía una solicitud por Gmail, espera la respuesta y deriva a aprobación o rechazo.
+- **Gestión de errores:** registra fallos del agente en Airtable para revisión.
+- **Revisión humana (HITL):** busca contenido en `Centro de Comando`, envía una solicitud por Gmail, espera aprobación o rechazo y actualiza Airtable.
 
 La revisión humana registra una decisión. La publicación automática de contenido no se presenta como una funcionalidad validada.
 
-## Entregables y estado de preparación
+## Estado contra rúbrica
 
-Este repositorio está en preparación. Los estados siguientes distinguen lo construido de los archivos que todavía deben incorporarse.
-
-| Criterio | Entregable | Estado en este repositorio |
+| Criterio | Entregable | Estado actual |
 |---|---|---|
-| Arquitectura — 20% | PDF con triggers, decisiones, IA, APIs y destinos de datos | PDF de revisión disponible, páginas 2 y 3 |
-| Estructuras de datos — 20% | Tablas, relaciones y esquemas JSON de transferencia | [Manual de datos disponible](documentacion/Manual_Datos.md); integrado al PDF, páginas 4 y 5 |
-| Costos — 20% | Matriz comparativa y justificación de modelos por tarea | [TP6 corregido disponible](documentacion/Costos_Eficiencia_TP6_Corregido.md); comparación del agente y TP6 en PDF, páginas 6 y 7; gasto real pendiente |
-| Seguridad y resiliencia — 20% | Minimización de datos, manejo de errores y HITL | Controles y límites documentados en PDF, página 8; correcciones funcionales pendientes |
-| Dashboard — 20% | Enlace de lectura con KPIs y tasa de errores | Pendiente de incorporar y verificar |
+| Arquitectura — 20% | PDF con triggers, decisiones, IA, APIs y destinos de datos | Cubierto en PDF de revisión; falta actualizar versión final con pruebas nuevas |
+| Estructuras de datos — 20% | Tablas, relaciones y esquemas JSON de transferencia | Cubierto en [Manual de datos](documentacion/Manual_Datos.md) y PDF |
+| Costos — 20% | Matriz comparativa y justificación de modelos por tarea | Cubierto con [TP6 corregido](documentacion/Costos_Eficiencia_TP6_Corregido.md); falta reflejar estado final en PDF |
+| Seguridad y resiliencia — 20% | Minimización de datos, manejo de errores y HITL | HITL rechazo y aprobación probados; falta prueba documentada de error/seguridad del agente |
+| Dashboard — 20% | Vista o dashboard con KPIs y tasa de errores | Pendiente de incorporar y verificar |
 
 [Checklist viva de cierre](documentacion/Checklist_Entrega_Final.md): separa lo ya acreditado, lo pendiente y el orden recomendado para terminar.
 
 ## Evidencias de pruebas
 
-La rama de rechazo del workflow `STH HITL Approval - FINAL` tiene una ejecución exitosa: **#11595, 21 de septiembre de 2026**, con recorrido por `FALSE → Update record1`.
+| Prueba | Workflow | Ejecución | Resultado | Documento |
+|---|---|---:|---|---|
+| Agente responde pregunta educativa sobre Kristallnacht | `Holocaust Studies Chat Agent -FINAL` | `11597` | Success; respuesta generada, RAG consultado y registro en Airtable | [Prueba agente](documentacion/Prueba_Agente_Kristallnacht.md) |
+| HITL rechazo | `STH HITL Approval - FINAL` | `11595` | Success; rama FALSE y registro `Rechazado` | [Prueba HITL rechazo](documentacion/Prueba_HITL_Rechazo.md) |
+| HITL aprobación | `STH HITL Approval - FINAL` | `11600` | Success; rama TRUE, `Estado = Aprobado`, `Aprobado = true` | [Prueba HITL aprobación](documentacion/Prueba_HITL_Aprobacion.md) |
 
-Las dos capturas están disponibles en [evidencias/hitl](evidencias/hitl/): recorrido de rechazo en verde y estado final en Airtable.
+Durante la prueba de aprobación, una ejecución automática adicional (`11601`) se disparó mientras el workflow estuvo publicado; no actualizó datos porque `Search records` devolvió cero registros.
 
-[Consultar la documentación de la prueba de rechazo](documentacion/Prueba_HITL_Rechazo.md).
-
-La revisión del [export HITL](documentacion/Revision_Export_HITL.md) identificó correcciones pendientes en el IF y el tipo de Estado en TRUE. El rechazo probado no acredita por sí solo la decisión booleana de aprobación. Las pruebas del agente y su ruta de error, realizadas durante el desarrollo, deben incorporarse con sus evidencias. No se considera completo el conjunto de cinco pruebas hasta inventariarlas.
-
-## Pendientes de entrega
-
-- [x] Incorporar PDF de revisión con arquitectura, datos, costos y seguridad.
-- [ ] Actualizar el PDF después de corregir y validar la versión final.
-- [x] Exportar e inspeccionar los JSON del agente, indexación y HITL.
-- [ ] Resolver las observaciones de los exports y verificar las versiones finales.
-- [x] Subir y revisar las dos capturas del rechazo HITL.
-- [ ] Incorporar evidencia verificable de aprobación TRUE.
-- [ ] Inventariar al menos cinco pruebas, incluido un camino de error.
-- [ ] Incorporar y comprobar los enlaces de lectura de Airtable y del dashboard.
-- [ ] Incorporar el enlace del video de demostración.
-- [ ] Revisar archivos y capturas para excluir claves API, tokens y credenciales.
+Los workflows fueron despublicados después de las pruebas para evitar consumo innecesario.
 
 ## Workflows incorporados
 
@@ -75,19 +62,33 @@ La revisión del [export HITL](documentacion/Revision_Export_HITL.md) identific�
 - [HITL: export anonimizado](workflows/STH_HITL_Export_Anonimizado.json) · [Revisión](documentacion/Revision_Export_HITL.md).
 - [Indexación: export anonimizado](workflows/Holocaust_Site_Index_Documents_Export_Anonimizado.json) · [Revisión](documentacion/Revision_Export_Indexacion.md).
 
-Los tres conservan el estado inactivo y requieren reconectar credenciales al importar. Son copias del estado recibido con observaciones pendientes; no equivalen a versiones corregidas y probadas.
+Las correcciones aplicadas o preparadas están documentadas en [Correcciones pendientes de workflows](documentacion/Correcciones_Pendientes_Workflows.md), [Parches de revisión](documentacion/Parches_Workflows_Revision.diff) y [workflows_corregidos](workflows_corregidos/README.md).
 
-Las correcciones preparadas para revisión están documentadas en [Correcciones pendientes de workflows](documentacion/Correcciones_Pendientes_Workflows.md), [Parches de revisión](documentacion/Parches_Workflows_Revision.diff) y [workflows_corregidos](workflows_corregidos/README.md).
+## Evidencias visuales
 
-## Organización prevista
+- [Evidencias HITL](evidencias/hitl/): rechazo documentado con workflow y Airtable.
+- Capturas nuevas del agente y de aprobación TRUE fueron generadas el 22/09/2026 y deben incorporarse a `evidencias/` antes de cerrar la entrega final.
 
-- `documentacion/`: documentación técnica, checklist, parches y PDF de entrega.
-- `workflows/`: exportaciones JSON revisadas.
-- `workflows_corregidos/`: notas sobre las versiones corregidas de revisión.
-- `evidencias/`: capturas y registro de pruebas.
+## Pendientes antes de entregar
+
+- [ ] Subir capturas nuevas del agente y HITL aprobación a `evidencias/`.
+- [ ] Completar una prueba adicional de error o seguridad del agente.
+- [ ] Incorporar vista/dashboard con KPIs: consultas procesadas, errores, tasa de error, aprobados, rechazados y en revisión.
+- [ ] Actualizar el PDF de revisión a PDF final.
+- [ ] Actualizar exports finales si se decide reemplazar los anonimizados de revisión.
+- [ ] Agregar enlace del dashboard/base de lectura si corresponde.
+- [ ] Incorporar enlace del video de demostración.
+- [ ] Revisar capturas finales para excluir claves API, tokens o credenciales.
+
+## Organización
+
+- `documentacion/`: documentación técnica, checklist, pruebas, parches y PDF.
+- `workflows/`: exportaciones JSON anonimizadas.
+- `workflows_corregidos/`: notas sobre versiones corregidas de revisión.
+- `evidencias/`: capturas y material de prueba.
 
 ## Referencia del proyecto
 
 [Sitio Study the Holocaust](https://studytheholocaust.org/)
 
-Los enlaces de la base de datos, dashboard y video se agregarán cuando estén verificados. No se reutilizan los enlaces del proyecto anterior Nexo Digital.
+No se reutilizan enlaces ni archivos del proyecto anterior Nexo Digital.
