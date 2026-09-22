@@ -27,8 +27,8 @@ Estado al 22/09/2026. Este documento separa lo ya acreditado de lo pendiente par
 - [x] Probar pregunta educativa real. Ejecucion `11597`.
 - [x] Verificar respuesta generada internamente por el agente.
 - [x] Verificar registro creado en Airtable `Consultas Agente`.
+- [x] Capturar evidencia visual del agente: workflow en verde y `Edit Fields` con output textual.
 - [x] Documentar el caso de prueba en GitHub: `documentacion/Prueba_Agente_Kristallnacht.md`.
-- [ ] Capturar evidencia visual de la prueba del agente. Pendiente porque el chat visible mostro numeros aunque la ejecucion interna devolvio texto correcto.
 
 ## 3. HITL - rechazo
 
@@ -45,13 +45,13 @@ Estado al 22/09/2026. Este documento separa lo ya acreditado de lo pendiente par
 - [x] Opcion `Aprobado` verificada en Airtable.
 - [x] Problema del export identificado: IF compara texto en vez de booleano.
 - [x] Problema del export identificado: TRUE manda `Estado` como texto JSON.
-- [ ] Corregir IF para evaluar booleano real: `{{ $json.data.approved }}`.
-- [ ] Corregir TRUE para mandar array: `{{ ["Aprobado"] }}`.
-- [ ] Ejecutar prueba controlada de aprobacion.
-- [ ] Verificar rama TRUE verde.
-- [ ] Verificar Airtable con `Estado = Aprobado` y checkbox `Aprobado` marcado.
-- [ ] Capturar evidencia.
-- [ ] Documentar prueba en GitHub.
+- [x] Corregir IF para evaluar booleano real: `{{ $json.data.approved }}`.
+- [x] Corregir TRUE para mandar array: `{{ ["Aprobado"] }}`.
+- [x] Ejecutar prueba controlada de aprobacion. Ejecucion `11600`.
+- [x] Verificar rama TRUE verde.
+- [x] Verificar Airtable con `Estado = Aprobado` y checkbox `Aprobado` marcado.
+- [x] Capturar evidencia.
+- [x] Documentar prueba en GitHub: `documentacion/Prueba_HITL_Aprobacion.md`.
 
 ## 5. Indexacion del sitio
 
@@ -66,7 +66,7 @@ Estado al 22/09/2026. Este documento separa lo ya acreditado de lo pendiente par
 ## 6. Pruebas minimas recomendadas
 
 - [x] Prueba 1: HITL rechazo.
-- [ ] Prueba 2: HITL aprobacion.
+- [x] Prueba 2: HITL aprobacion.
 - [x] Prueba 3: agente responde pregunta educativa.
 - [x] Prueba 4: agente registra consulta en Airtable.
 - [ ] Prueba 5: caso de seguridad/error documentado.
@@ -116,10 +116,9 @@ Estado al 22/09/2026. Este documento separa lo ya acreditado de lo pendiente par
 
 ## Orden recomendado de cierre
 
-1. Resolver la visualizacion del chat del agente o documentarla con captura.
-2. Corregir HITL TRUE.
-3. Probar aprobacion y registrar evidencia.
-4. Completar dashboard o vista de lectura.
-5. Actualizar PDF final.
-6. Actualizar README y GitHub.
-7. Grabar video.
+1. Subir capturas nuevas del agente y HITL aprobacion a GitHub.
+2. Completar prueba/documentacion de error o seguridad.
+3. Completar dashboard o vista de lectura.
+4. Actualizar PDF final.
+5. Actualizar README y GitHub.
+6. Grabar video.
