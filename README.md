@@ -1,94 +1,67 @@
-# Study the Holocaust — AI Automation
+# Study the Holocaust - AI Automation Final
 
-**Proyecto final de AI Automation · Coderhouse**  
-**Alumna:** Ximena Basualdo · **Fecha:** septiembre de 2026
+Proyecto final de AI Automation para Coderhouse.
 
-## Documento principal
+## Resumen
 
-[Leer el PDF de arquitectura y documentación (10 páginas)](documentacion/Entrega_Final_STH_Revision.pdf).
-
-Versión de revisión del 21/09/2026. El PDF documenta arquitectura, estructuras de datos, costos, seguridad y evidencias iniciales. Debe actualizarse a versión final con las pruebas nuevas del 22/09/2026 antes de entregar.
-
-## Objetivo
-
-Asistente educativo de Study the Holocaust que combina generación de respuestas con recuperación de información (RAG), registro de consultas y revisión humana por correo. El ecosistema utiliza n8n, OpenAI, Supabase, Airtable y Gmail.
+Ecosistema de automatización con IA para Study the Holocaust. El sistema combina n8n, Airtable, OpenAI, Supabase RAG y revisión humana por Gmail para responder consultas educativas, registrar interacciones y controlar decisiones editoriales antes de cualquier acción crítica.
 
 ## Componentes
 
-| Componente | Función |
-|---|---|
-| n8n | Orquestación de los workflows |
-| OpenAI | Generación de respuestas y embeddings |
-| Supabase | Almacenamiento y consulta de la base de conocimiento vectorial |
-| Airtable — STH Content Pipeline | Registro de consultas y seguimiento de estados |
-| Gmail | Solicitud de revisión y espera de una decisión humana |
+- `Holocaust Studies Chat Agent -FINAL`: agente educativo con GPT-5 nano, recuperación RAG y registro en Airtable.
+- `STH HITL Approval - FINAL`: flujo de revisión humana por Gmail con ramas de aprobación y rechazo.
+- `Holocaust Site - Index Documents`: indexación controlada del sitio hacia Supabase/documents.
+- `STH Content Pipeline`: base de Airtable con Centro de Comando, Consultas Agente y Dashboard Público STH.
 
-## Flujos del proyecto
+## Evidencia validada
 
-- **Agente educativo:** recibe una consulta, usa la base de conocimiento del sitio y registra la interacción en `Consultas Agente`.
-- **Indexación:** prepara contenido del sitio para su recuperación desde Supabase.
-- **Gestión de errores:** registra fallos del agente en Airtable para revisión.
-- **Revisión humana (HITL):** busca contenido en `Centro de Comando`, envía una solicitud por Gmail, espera aprobación o rechazo y actualiza Airtable.
+- HITL rechazo: ejecución n8n `11595`, estado final `Rechazado`.
+- Agente educativo: ejecución n8n `11597`, consulta sobre Kristallnacht y registro `Procesado`.
+- HITL aprobación: ejecución n8n `11600`, estado final `Aprobado` y checkbox activado.
+- Dashboard ejecutivo: 14 consultas totales, 9 procesadas, 2 errores, tasa de error 14,29 %, 1 contenido aprobado y 2 rechazados.
 
-La revisión humana registra una decisión. La publicación automática de contenido no se presenta como una funcionalidad validada.
+## Enlaces
+
+- Sitio educativo: https://studytheholocaust.org/
+- Dashboard público Airtable: https://airtable.com/appnkoN6JcAcSAVDg/shrYxSBg2VbQ6KLvz
+- Video demo 3 minutos: pendiente de grabación.
+
+## Workflows finales
+
+Los exports finales están en `workflows_corregidos/` y se mantienen con `active=false` para evitar consumo de cuota o ejecuciones accidentales.
+
+- [Agente educativo final](workflows_corregidos/Holocaust_Studies_Chat_Agent_Export_FINAL.json): incluye `maxTokens = 600`, RAG, registro exitoso y ruta local de error.
+- [HITL final](workflows_corregidos/STH_HITL_Export_FINAL.json): incluye Schedule explícito cada 30 minutos, reserva previa `Esperando Aprobacion`, ramas TRUE/FALSE y actualización final de Airtable.
+- [Indexación final](workflows_corregidos/Holocaust_Site_Index_Documents_Export_FINAL.json): indexación controlada del sitio hacia Supabase.
+
+También se conservan los exports anonimizados originales en `workflows/` como respaldo histórico.
+
+## Documentación de cierre
+
+- [Checklist de entrega final](documentacion/Checklist_Entrega_Final.md)
+- [Auditoría contra consigna completa](documentacion/Auditoria_Consigna_Completa.md)
+- [Matriz de rúbrica](documentacion/Matriz_Rubrica_Entrega_Final.md)
+- [Plan técnico n8n sin ejecutar](documentacion/Plan_Cambios_N8N_Sin_Ejecutar.md)
+- [Prueba agente Kristallnacht](documentacion/Prueba_Agente_Kristallnacht.md)
+- [Prueba HITL aprobación](documentacion/Prueba_HITL_Aprobacion.md)
+- [Prueba HITL rechazo](documentacion/Prueba_HITL_Rechazo.md)
 
 ## Estado contra rúbrica
 
-| Criterio | Entregable | Estado actual |
-|---|---|---|
-| Arquitectura — 20% | PDF con triggers, decisiones, IA, APIs y destinos de datos | Cubierto en PDF de revisión; falta actualizar versión final con pruebas nuevas |
-| Estructuras de datos — 20% | Tablas, relaciones y esquemas JSON de transferencia | Cubierto en [Manual de datos](documentacion/Manual_Datos.md) y PDF |
-| Costos — 20% | Matriz comparativa y justificación de modelos por tarea | Cubierto con [TP6 corregido](documentacion/Costos_Eficiencia_TP6_Corregido.md); falta reflejar estado final en PDF |
-| Seguridad y resiliencia — 20% | Minimización de datos, manejo de errores y HITL | HITL rechazo y aprobación probados; falta prueba documentada de error/seguridad del agente |
-| Dashboard — 20% | Vista o dashboard con KPIs y tasa de errores | Pendiente de incorporar y verificar |
+| Criterio | Estado |
+|---|---|
+| Mapa de Arquitectura del Sistema | Cubierto en PDF/documentación: triggers, routers, IA, Gmail, Airtable, Supabase y destinos. |
+| Manual Operativo de Estructuras de Datos | Cubierto con tablas, relaciones y contratos JSON. |
+| Estrategia de Optimización de Costos y Recursos | Cubierto con matriz comparativa y elección de modelos por tarea. |
+| Seguridad, Privacidad y Resiliencia | Cubierto con minimización, HITL, error handling local, workflows desactivados y plan técnico de cierre. |
+| Dashboard de Control Ejecutivo | Cubierto con enlace público de Airtable y KPIs operativos. |
 
-[Checklist viva de cierre](documentacion/Checklist_Entrega_Final.md): separa lo ya acreditado, lo pendiente y el orden recomendado para terminar.
+## Pendientes reales antes de la entrega final
 
-## Evidencias de pruebas
+- Subir el PDF final actualizado al repositorio si la plataforma exige verlo desde GitHub. La versión final ya fue generada localmente como `Entrega_Final_STH_Final.pdf`.
+- Grabar y enlazar el video obligatorio de 3 minutos.
+- Si se activan workflows reales en n8n, replicar/confirmar en la UI los cambios ya presentes en los exports finales y no repetir pruebas TRUE/FALSE ya validadas.
 
-| Prueba | Workflow | Ejecución | Resultado | Documento |
-|---|---|---:|---|---|
-| Agente responde pregunta educativa sobre Kristallnacht | `Holocaust Studies Chat Agent -FINAL` | `11597` | Success; respuesta generada, RAG consultado y registro en Airtable | [Prueba agente](documentacion/Prueba_Agente_Kristallnacht.md) |
-| HITL rechazo | `STH HITL Approval - FINAL` | `11595` | Success; rama FALSE y registro `Rechazado` | [Prueba HITL rechazo](documentacion/Prueba_HITL_Rechazo.md) |
-| HITL aprobación | `STH HITL Approval - FINAL` | `11600` | Success; rama TRUE, `Estado = Aprobado`, `Aprobado = true` | [Prueba HITL aprobación](documentacion/Prueba_HITL_Aprobacion.md) |
+## Regla de uso
 
-Durante la prueba de aprobación, una ejecución automática adicional (`11601`) se disparó mientras el workflow estuvo publicado; no actualizó datos porque `Search records` devolvió cero registros.
-
-Los workflows fueron despublicados después de las pruebas para evitar consumo innecesario.
-
-## Workflows incorporados
-
-- [Agente: export anonimizado](workflows/Holocaust_Studies_Chat_Agent_Export_Anonimizado.json) · [Revisión](documentacion/Revision_Export_Agente.md).
-- [HITL: export anonimizado](workflows/STH_HITL_Export_Anonimizado.json) · [Revisión](documentacion/Revision_Export_HITL.md).
-- [Indexación: export anonimizado](workflows/Holocaust_Site_Index_Documents_Export_Anonimizado.json) · [Revisión](documentacion/Revision_Export_Indexacion.md).
-
-Las correcciones aplicadas o preparadas están documentadas en [Correcciones pendientes de workflows](documentacion/Correcciones_Pendientes_Workflows.md), [Parches de revisión](documentacion/Parches_Workflows_Revision.diff) y [workflows_corregidos](workflows_corregidos/README.md).
-
-## Evidencias visuales
-
-- [Evidencias HITL](evidencias/hitl/): rechazo documentado con workflow y Airtable.
-- Capturas nuevas del agente y de aprobación TRUE fueron generadas el 22/09/2026 y deben incorporarse a `evidencias/` antes de cerrar la entrega final.
-
-## Pendientes antes de entregar
-
-- [ ] Subir capturas nuevas del agente y HITL aprobación a `evidencias/`.
-- [ ] Completar una prueba adicional de error o seguridad del agente.
-- [ ] Incorporar vista/dashboard con KPIs: consultas procesadas, errores, tasa de error, aprobados, rechazados y en revisión.
-- [ ] Actualizar el PDF de revisión a PDF final.
-- [ ] Actualizar exports finales si se decide reemplazar los anonimizados de revisión.
-- [ ] Agregar enlace del dashboard/base de lectura si corresponde.
-- [ ] Incorporar enlace del video de demostración.
-- [ ] Revisar capturas finales para excluir claves API, tokens o credenciales.
-
-## Organización
-
-- `documentacion/`: documentación técnica, checklist, pruebas, parches y PDF.
-- `workflows/`: exportaciones JSON anonimizadas.
-- `workflows_corregidos/`: notas sobre versiones corregidas de revisión.
-- `evidencias/`: capturas y material de prueba.
-
-## Referencia del proyecto
-
-[Sitio Study the Holocaust](https://studytheholocaust.org/)
-
-No se reutilizan enlaces ni archivos del proyecto anterior Nexo Digital.
+No repetir ejecuciones ya aprobadas. Antes de consumir cuota nueva, revisar historial de n8n para reutilizar evidencias existentes. Los workflows quedan despublicados hasta terminar controles finales.
