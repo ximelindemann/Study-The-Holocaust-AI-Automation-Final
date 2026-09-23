@@ -25,7 +25,6 @@ Ecosistema de automatización con IA para Study the Holocaust. El sistema combin
 - Sitio educativo: https://studytheholocaust.org/
 - Dashboard público Airtable: https://airtable.com/appnkoN6JcAcSAVDg/shrYxSBg2VbQ6KLvz
 - PDF final: [documentacion/Entrega_Final_STH_Final.pdf](documentacion/Entrega_Final_STH_Final.pdf)
-- Video demo 3 minutos: pendiente de grabación.
 
 ## Workflows finales
 
