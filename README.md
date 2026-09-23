@@ -24,6 +24,7 @@ Ecosistema de automatización con IA para Study the Holocaust. El sistema combin
 
 - Sitio educativo: https://studytheholocaust.org/
 - Dashboard público Airtable: https://airtable.com/appnkoN6JcAcSAVDg/shrYxSBg2VbQ6KLvz
+- PDF final: [documentacion/Entrega_Final_STH_Final.pdf](documentacion/Entrega_Final_STH_Final.pdf)
 - Video demo 3 minutos: pendiente de grabación.
 
 ## Workflows finales
@@ -36,32 +37,9 @@ Los exports finales están en `workflows_corregidos/` y se mantienen con `active
 
 También se conservan los exports anonimizados originales en `workflows/` como respaldo histórico.
 
-## Documentación de cierre
+## Documentación
 
-- [Checklist de entrega final](documentacion/Checklist_Entrega_Final.md)
-- [Auditoría contra consigna completa](documentacion/Auditoria_Consigna_Completa.md)
-- [Matriz de rúbrica](documentacion/Matriz_Rubrica_Entrega_Final.md)
-- [Plan técnico n8n sin ejecutar](documentacion/Plan_Cambios_N8N_Sin_Ejecutar.md)
+- [PDF final de entrega](documentacion/Entrega_Final_STH_Final.pdf)
 - [Prueba agente Kristallnacht](documentacion/Prueba_Agente_Kristallnacht.md)
 - [Prueba HITL aprobación](documentacion/Prueba_HITL_Aprobacion.md)
 - [Prueba HITL rechazo](documentacion/Prueba_HITL_Rechazo.md)
-
-## Estado contra rúbrica
-
-| Criterio | Estado |
-|---|---|
-| Mapa de Arquitectura del Sistema | Cubierto en PDF/documentación: triggers, routers, IA, Gmail, Airtable, Supabase y destinos. |
-| Manual Operativo de Estructuras de Datos | Cubierto con tablas, relaciones y contratos JSON. |
-| Estrategia de Optimización de Costos y Recursos | Cubierto con matriz comparativa y elección de modelos por tarea. |
-| Seguridad, Privacidad y Resiliencia | Cubierto con minimización, HITL, error handling local, workflows desactivados y plan técnico de cierre. |
-| Dashboard de Control Ejecutivo | Cubierto con enlace público de Airtable y KPIs operativos. |
-
-## Pendientes reales antes de la entrega final
-
-- Subir el PDF final actualizado al repositorio si la plataforma exige verlo desde GitHub. La versión final ya fue generada localmente como `Entrega_Final_STH_Final.pdf`.
-- Grabar y enlazar el video obligatorio de 3 minutos.
-- Si se activan workflows reales en n8n, replicar/confirmar en la UI los cambios ya presentes en los exports finales y no repetir pruebas TRUE/FALSE ya validadas.
-
-## Regla de uso
-
-No repetir ejecuciones ya aprobadas. Antes de consumir cuota nueva, revisar historial de n8n para reutilizar evidencias existentes. Los workflows quedan despublicados hasta terminar controles finales.
