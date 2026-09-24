@@ -15,9 +15,9 @@ Ecosistema de automatización con IA para Study the Holocaust. El sistema combin
 
 ## Evidencia validada
 
-- HITL rechazo: ejecución n8n `11595`, estado final `Rechazado`.
 - Agente educativo: ejecución n8n `11597`, consulta sobre Kristallnacht y registro `Procesado`.
 - HITL aprobación: ejecución n8n `11600`, estado final `Aprobado` y checkbox activado.
+- HITL rechazo: ejecución n8n `11595`, estado final `Rechazado`.
 - Dashboard ejecutivo: 14 consultas totales, 9 procesadas, 2 errores, tasa de error 14,29 %, 1 contenido aprobado y 2 rechazados.
 
 ## Enlaces
@@ -30,13 +30,13 @@ Ecosistema de automatización con IA para Study the Holocaust. El sistema combin
 
 Los exports finales están en `workflows_corregidos/` y se mantienen con `active=false` para evitar consumo de cuota o ejecuciones accidentales.
 
-- [Agente educativo final](workflows_corregidos/Holocaust_Studies_Chat_Agent_Export_FINAL.json): incluye `maxTokens = 600`, RAG, registro exitoso y ruta local de error.
-- [HITL final](workflows_corregidos/STH_HITL_Export_FINAL.json): incluye Schedule explícito cada 30 minutos, reserva previa `Esperando Aprobacion`, ramas TRUE/FALSE y actualización final de Airtable.
+- [Agente educativo final](workflows_corregidos/Holocaust_Studies_Chat_Agent_Export_FINAL.json): agente educativo con RAG, OpenAI, registro en Airtable y ruta de error.
+- [HITL final](workflows_corregidos/STH_HITL_Export_FINAL.json): flujo Human-in-the-loop con revisión por Gmail, aprobación/rechazo y actualización en Airtable.
 - [Indexación final](workflows_corregidos/Holocaust_Site_Index_Documents_Export_FINAL.json): indexación controlada del sitio hacia Supabase.
 
 ## Documentación
 
 - [PDF final de entrega](documentacion/Entrega_Final_STH_Final.pdf)
-- [Prueba agente Kristallnacht](documentacion/Prueba_Agente_Kristallnacht.md)
-- [Prueba HITL aprobación](documentacion/Prueba_HITL_Aprobacion.md)
-- [Prueba HITL rechazo](documentacion/Prueba_HITL_Rechazo.md)
+- [Evidencia agente educativo](documentacion/Evidencia_Agente_Educativo.md)
+- [Evidencia HITL aprobación](documentacion/Evidencia_HITL_Aprobacion.md)
+- [Evidencia HITL rechazo](documentacion/Evidencia_HITL_Rechazo.md)
