@@ -8,6 +8,6 @@ Esta carpeta contiene los exports finales de n8n usados como respaldo técnico d
 - `STH_HITL_Export_FINAL.json`: flujo Human-in-the-loop con revisión por Gmail, aprobación/rechazo y actualización en Airtable.
 - `Holocaust_Site_Index_Documents_Export_FINAL.json`: flujo de indexación controlada del sitio hacia Supabase.
 
-## Estado
+## Estado operativo
 
-Los workflows se entregan exportados con `active=false` para evitar ejecuciones accidentales y preservar cuota. Las pruebas principales del agente y del HITL están documentadas en la carpeta `documentacion/`.
+Los workflows se entregan exportados con `active=false` como medida de control para evitar ejecuciones accidentales. Las evidencias principales del agente y del HITL están documentadas en la carpeta `documentacion/`.
