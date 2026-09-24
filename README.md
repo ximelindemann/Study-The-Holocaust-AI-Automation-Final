@@ -20,7 +20,7 @@ Ecosistema de automatización con IA para Study the Holocaust. El sistema combin
 - HITL rechazo: ejecución n8n `11595`, estado final `Rechazado`.
 - Dashboard ejecutivo: 14 consultas totales, 9 procesadas, 2 errores, tasa de error 14,29 %, 1 contenido aprobado y 2 rechazados.
 
-## Enlaces
+## Enlaces de entrega
 
 - Sitio educativo: https://studytheholocaust.org/
 - Dashboard público Airtable: https://airtable.com/appnkoN6JcAcSAVDg/shrYxSBg2VbQ6KLvz
