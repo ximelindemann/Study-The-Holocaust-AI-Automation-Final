@@ -1,44 +1,13 @@
-# Workflows corregidos - revision
+# Workflows finales exportados
 
-Esta carpeta describe copias de revision preparadas localmente. No reemplaza los exports anonimizados originales de `workflows/`.
+Esta carpeta contiene los exports finales de n8n usados como respaldo técnico de la entrega.
 
-## Archivos locales preparados
+## Archivos
 
-En el workspace local se generaron:
-
-- `output/workflows_corregidos/Holocaust_Studies_Chat_Agent_Export_CORREGIDO_REVISION.json`
-- `output/workflows_corregidos/STH_HITL_Export_CORREGIDO_REVISION.json`
-- `output/workflows_corregidos/Holocaust_Site_Index_Documents_Export_REVISION.json`
-
-## Cambios funcionales preparados
-
-### Agente educativo
-
-- Cambiar expresiones con doble igual `=={{ ... }}` a `={{ ... }}`.
-- Reemplazar fechas fijas `2026-09-18T00:00:00` por `={{ $now.toISO() }}`.
-- Mantener el registro de exito y el registro de error, pero probarlos antes de declararlos cerrados.
-
-### HITL
-
-- Cambiar el IF de aprobacion para evaluar un booleano real:
-
-```js
-={{ $json.data.approved }}
-```
-
-- Cambiar `Estado` de la rama TRUE para enviar array a Airtable:
-
-```js
-={{ ["Aprobado"] }}
-```
-
-El motivo es que `Estado` en Airtable, tabla `Centro de Comando`, es `multipleSelects`.
+- `Holocaust_Studies_Chat_Agent_Export_FINAL.json`: agente educativo con RAG, OpenAI, registro en Airtable y ruta de error.
+- `STH_HITL_Export_FINAL.json`: flujo Human-in-the-loop con revisión por Gmail, aprobación/rechazo y actualización en Airtable.
+- `Holocaust_Site_Index_Documents_Export_FINAL.json`: flujo de indexación controlada del sitio hacia Supabase.
 
 ## Estado
 
-Estas correcciones estan preparadas para aplicar y probar en n8n. Todavia falta:
-
-- prueba real del agente;
-- prueba real del TRUE;
-- captura de evidencias;
-- actualizacion del PDF final.
+Los workflows se entregan exportados con `active=false` para evitar ejecuciones accidentales y preservar cuota. Las pruebas principales del agente y del HITL están documentadas en la carpeta `documentacion/`.
