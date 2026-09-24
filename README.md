@@ -28,7 +28,7 @@ Ecosistema de automatización con IA para Study the Holocaust. El sistema combin
 
 ## Workflows finales
 
-Los exports finales están en `workflows_corregidos/` y se mantienen con `active=false` para evitar consumo de cuota o ejecuciones accidentales.
+Los exports de n8n están incluidos como respaldo técnico de la entrega.
 
 - [Agente educativo final](workflows_corregidos/Holocaust_Studies_Chat_Agent_Export_FINAL.json): agente educativo con RAG, OpenAI, registro en Airtable y ruta de error.
 - [HITL final](workflows_corregidos/STH_HITL_Export_FINAL.json): flujo Human-in-the-loop con revisión por Gmail, aprobación/rechazo y actualización en Airtable.
