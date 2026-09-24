@@ -8,10 +8,10 @@ Ecosistema de automatización con IA para Study the Holocaust. El sistema combin
 
 ## Componentes
 
-- `Holocaust Studies Chat Agent -FINAL`: agente educativo con GPT-5 nano, recuperación RAG y registro en Airtable.
-- `STH HITL Approval - FINAL`: flujo de revisión humana por Gmail con ramas de aprobación y rechazo.
-- `Holocaust Site - Index Documents`: indexación controlada del sitio hacia Supabase/documents.
-- `STH Content Pipeline`: base de Airtable con Centro de Comando, Consultas Agente y Dashboard Público STH.
+- `Holocaust Studies Chat Agent`: agente educativo con recuperación RAG, procesamiento con OpenAI y registro en Airtable.
+- `STH HITL Approval`: flujo de validación humana por Gmail con ramas de aprobación y rechazo.
+- `Holocaust Site - Index Documents`: indexación controlada del sitio hacia Supabase.
+- `STH Content Pipeline`: base de Airtable con registro operativo y dashboard ejecutivo.
 
 ## Evidencia validada
 
@@ -26,13 +26,13 @@ Ecosistema de automatización con IA para Study the Holocaust. El sistema combin
 - Dashboard público Airtable: https://airtable.com/appnkoN6JcAcSAVDg/shrYxSBg2VbQ6KLvz
 - PDF final: [documentacion/Entrega_Final_STH_Final.pdf](documentacion/Entrega_Final_STH_Final.pdf)
 
-## Workflows finales
+## Exports técnicos
 
 Los exports de n8n están incluidos como respaldo técnico de la entrega.
 
-- [Agente educativo final](workflows_corregidos/Holocaust_Studies_Chat_Agent_Export_FINAL.json): agente educativo con RAG, OpenAI, registro en Airtable y ruta de error.
-- [HITL final](workflows_corregidos/STH_HITL_Export_FINAL.json): flujo Human-in-the-loop con revisión por Gmail, aprobación/rechazo y actualización en Airtable.
-- [Indexación final](workflows_corregidos/Holocaust_Site_Index_Documents_Export_FINAL.json): indexación controlada del sitio hacia Supabase.
+- [Agente educativo](workflows/Holocaust_Studies_Chat_Agent_Export_Anonimizado.json): agente con RAG, OpenAI y registro en Airtable.
+- [Validación humana HITL](workflows/STH_HITL_Export_Anonimizado.json): flujo de aprobación/rechazo con Gmail y Airtable.
+- [Indexación del sitio](workflows/Holocaust_Site_Index_Documents_Export_Anonimizado.json): flujo de carga de contenido hacia Supabase.
 
 ## Documentación
 
