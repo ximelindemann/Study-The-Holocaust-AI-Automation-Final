@@ -34,8 +34,6 @@ Los exports finales están en `workflows_corregidos/` y se mantienen con `active
 - [HITL final](workflows_corregidos/STH_HITL_Export_FINAL.json): incluye Schedule explícito cada 30 minutos, reserva previa `Esperando Aprobacion`, ramas TRUE/FALSE y actualización final de Airtable.
 - [Indexación final](workflows_corregidos/Holocaust_Site_Index_Documents_Export_FINAL.json): indexación controlada del sitio hacia Supabase.
 
-También se conservan los exports anonimizados originales en `workflows/` como respaldo histórico.
-
 ## Documentación
 
 - [PDF final de entrega](documentacion/Entrega_Final_STH_Final.pdf)
